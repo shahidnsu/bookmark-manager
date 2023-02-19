@@ -1,0 +1,28 @@
+<div class="flex flex-row justify-center">
+  <form [formGroup]="bookMarkForm" (ngSubmit)="onSubmit()">
+    <span class="block mt-4">Add BookMark</span>
+    <label class="block mt-4" for="title">title:</label>
+    <input class="block w-80 border-solid border border-gray-300 text-sm rounded-lg" id="title" type="text"
+      formControlName="title" />
+    <label for="url">url:</label>
+    <input class="block w-80 border-solid border border-gray-300 text-sm rounded-lg" id="url" type="url"
+      formControlName="url" />
+    <label for="cars">Category</label>
+
+    <select name="category" id="category" formControlName="category"
+      class="block w-80 border-solid border border-gray-300 text-sm rounded-lg">
+      <option *ngFor="let options of catergory" value="{{ options }}">
+        {{ options }}
+      </option>
+    </select>
+    <div class="flex flex-row justify-between mt-5">
+      <button class="rounded-md bg-indigo-500 p-3" (click)="backToHome()">
+        Cancel
+      </button>
+
+      <button type="submit" class="rounded-md bg-indigo-500 p-3" [disabled]="!bookMarkForm.valid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
