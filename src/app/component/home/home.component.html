@@ -1,6 +1,7 @@
 <div class="flex justify-center w-50 mt-3">
   <h1 class="text-3xl text-center">Bookmark Manager</h1>
-  <button class="justify-self-end ml-10 rounded-none bg-indigo-500" (click)="showTheBookmark()">
+  <button class="justify-self-end ml-10 rounded-md bg-indigo-500" (click)="showTheBookmark()">
     Add Bookmark
   </button>
 </div>
+<app-book-mark-view [value]="allBookMarks"></app-book-mark-view>
